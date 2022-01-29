@@ -10,11 +10,14 @@
 # render_pose: 是否渲染骨架信息,混合到原始图上, 0:不渲染，直接输出原始图像 1: 渲染骨架信息并叠加到原始图像
 # disable_blending: 关闭渲染的骨架信息和原始图像混合，只生成关键点骨架信息
 # ==================================================================
+img_dir='/home/jiaqianjing/workspace/search/gans/VITON-HD/datasets/test/image'
 ./build/examples/openpose/openpose.bin --hand \
-	--image_dir ../../gans/CIHP_PGN/datasets/CIHP/images/ \
+	--face \
+	--image_dir $img_dir \
 	--write_images output_images/ \
-	--write_images_format jpg \
+	--write_images_format png \
 	--write_json output_jsons/ \
 	--display 0 \
 	--render_pose 1 \
 	--disable_blending
+    # --net_resolution "1024x768"
